@@ -1,0 +1,285 @@
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+main {
+  min-height: 100vh;
+}
+
+header {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  mix-blend-mode: var(--menu__mix-blend);
+}
+
+section {
+  margin-left:var(--spacing-s);
+  margin-right:var(--spacing-s);
+  margin-bottom:var(--spacing-s);
+}
+
+a {
+  color:var(--color-link);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color:var(--color-hover);
+}
+
+iframe {
+  border: 0;
+}
+
+
+
+/* *************************************** 
+ * Footer
+ * *************************************** */
+
+footer {
+  width:100%;
+  background-color: var(--color-bg);
+}
+
+footer * {
+  text-decoration: none;
+}
+
+footer ul {
+  mix-blend-mode: var(--menu__mix-blend);
+  padding: var(--spacing-m) var(--spacing-s);
+  padding-top: var(--spacing-xl);
+  display: flex;
+  width:100%;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+footer ul a {
+  color:var(--menu__color-link);
+  font-size: var(--menu__font-size);
+  font-weight: var(--menu__font-weight);  
+}
+
+footer ul a:hover {
+  color:var(--menu__color-hover);
+}
+
+/* *************************************** 
+ * Landing
+ * *************************************** */
+
+
+ .landing {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.landing__background {
+  width: 100%;
+  position: absolute;
+}
+
+.landing__content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.landing__content-item {
+}
+
+.landing__offset {
+  margin-top:var(--landing-offset);
+}
+
+/* *************************************** 
+ * Overlay
+ * *************************************** */
+
+.overlay__container {
+  width:100%;
+  position: relative;
+  display: inline-block;
+  
+}
+
+.overlay__bg {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+}
+
+.overlay__content {
+  top: 0;
+  left: 0;
+  text-align: left;
+  position: absolute;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+  pointer-events: none;
+}
+
+/* *************************************** 
+ * Helper
+ * *************************************** */
+
+.sticky {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0rem;
+  background-color: var(--color-bg);
+}
+
+.drag__gallery-images {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drag__gallery-image {
+  position: absolute;
+}
+
+
+
+/* *************************************** 
+ * lightbox, click on image to go full 
+ * size from:
+ * https://code-boxx.com/image-zoom-css-javascript
+ * *************************************** */
+
+ #lightbox {
+  position: fixed; z-index: 99;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity ease 0.3s;
+}
+ 
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+ 
+#lightbox img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.zoom {
+  cursor: pointer;
+}
+
+
+/* *************************************** 
+ * p5js sketch
+ * *************************************** */
+
+.sketch__full iframe {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+/* *************************************** 
+ * image and figure
+ * *************************************** */
+
+figcaption {
+  margin-top:var(--spacing-xs);
+  margin-left:var(--spacing-xs);
+}
+
+img.img__bw {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+/* *************************************** 
+ * Media Queries for Mobile / portrait
+ * *************************************** */
+
+
+@media (orientation: portrait) {
+  
+  .row {
+    flex-direction: column;
+  }
+
+  .sticky {
+    /* position: relative;
+    top: auto; */
+    top:4rem;
+  }
+
+  .col,
+  .row>ul>li {
+    display: flex;
+    flex: auto;
+    width: 100%;
+  }
+
+  /* **********************************
+   * media (images, video)
+   * ********************************** */
+
+  .img__cover-50,
+  .img__cover-67,
+  .img__cover-75,
+  .img__cover-100 {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+
+  .img__cover-50 {
+    height: 50vh;
+  }
+
+  .img__cover-67 {
+    height: 67vh;
+  }
+
+  .img__cover-75 {
+    height: 75vh;
+  }
+
+  .img__cover-100 {
+    height: 100vh;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+}

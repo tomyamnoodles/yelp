@@ -1,0 +1,97 @@
+/* import css files */
+@import "/css/reset.css";
+@import "/css/predef.css";
+@import "/css/default.css";
+@import "/css/nav.css";
+
+
+/* import a font */
+@import url('https://rsms.me/inter/inter.css');
+@import url("https://use.typekit.net/zsu2ulu.css");
+
+
+:root {
+  /* spacing, apply to typography and divs */
+  --spacing-xs: 0.5rem;
+  --spacing-s: 1rem;
+  --spacing-m: 3rem;
+  --spacing-l: 6rem;
+  --spacing-xl: 12rem;
+
+  /* width, apply to div blocks */
+  --width-min: 60rem;
+  --width-max: 72rem;
+  
+  /* font-sizes, see predef.css font__ classes */
+  --font-size-xs: 0.6rem;
+  --font-size-s: 0.75rem;
+  --font-size-m: 1.0rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2.5rem;
+  --font-size-2x: 3rem;
+  --font-size-4x: 6rem;
+  --font-size-8x: 12rem;
+  --font-size-10x: 15rem;
+
+  
+
+  /* default color-set */
+  --color-bg: rgba(32, 32, 32);
+  --color-fg: rgb(237, 232, 224);
+  --color-link: rgb(18, 194, 48);
+  --color-hover: rgba(160, 155, 140, 1);
+  /* custom colors */
+  --color-0: rgba(0, 0, 0, 1);
+  --color-1: rgba(64, 64, 64, 1);
+  --color-2: rgba(160, 160, 160, 1);
+  --color-3: rgba(255, 255, 255, 1);
+
+  /* menu proerties*/
+  --menu__color-bg: rgba(0, 0, 0, 0.7); /* mobile mode */
+  --menu__color-link: rgba(240, 240, 240, 1);
+  --menu__color-hover: rgba(132, 132, 132,1);
+  --menu__color-current: rgb(120, 116, 102);
+  --menu__font-size: 1rem;
+  --menu__font-weight: 500;
+  --menu__mix-blend: difference;
+
+
+  --landing-offset: 50vh;
+
+  /* when debug is set to 1px, it will add borders 
+   * around elements to better understand the layout */
+  --debug: 0px;
+}
+
+
+html {
+  /* Font is loaded above, see @import url(..) */
+  font-family: 'Inter', sans-serif;
+}
+
+
+div {
+  /* default font size, different font sizes
+   * used for this website use the font-size
+   * set here as their reference-size and
+   * adjust accordingly – see :root above.
+   */
+  font-size: 18px;
+}
+
+/* mobile specific settings */
+@media (orientation: portrait) {
+  :root {
+    --font-size-l: 1.5rem;
+    --font-size-xl: 1.75rem;
+    --font-size-2x: 2rem;
+    --font-size-4x: 3rem;
+    --font-size-8x: 4rem;
+    --font-size-10x: 5rem;
+
+    --landing-offset:50vh;
+  }
+  h1, h2 {
+    font-size:var(--font-size-xl);
+  }
+}
